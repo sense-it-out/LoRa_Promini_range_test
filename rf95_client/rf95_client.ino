@@ -10,7 +10,7 @@
 
 #include <SPI.h>
 #include <RH_RF95.h>
-#define ModemConfig RH_RF95::Bw125Cr45Sf2048
+#define ModemConfig RH_RF95::Bw125Cr45Sf128
 // Singleton instance of the radio driver
 //RH_RF95 rf95;
 RH_RF95 rf95(10, 2); // Rocket Scream Mini Ultra Pro with the RFM95W
