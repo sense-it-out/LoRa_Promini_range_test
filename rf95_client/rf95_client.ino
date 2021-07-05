@@ -10,7 +10,7 @@
 
 #include <SPI.h>
 #include <RH_RF95.h>
-#define ModemConfig RH_RF95::Bw125Cr45Sf2048
+#define ModemConfig RH_RF95::Bw125Cr45Sf128   
 // Singleton instance of the radio driver
 //RH_RF95 rf95;
 RH_RF95 rf95(10, 2); // Rocket Scream Mini Ultra Pro with the RFM95W
@@ -36,12 +36,12 @@ void setup()
   // The default transmitter power is 13dBm, using PA_BOOST.
   // If you are using RFM95/96/97/98 modules which uses the PA_BOOST transmitter pin, then 
   // you can set transmitter powers from 5 to 23 dBm:
-//  driver.setTxPower(23, false);
+  rf95.setTxPower(2, false);
   // If you are using Modtronix inAir4 or inAir9,or any other module which uses the
   // transmitter RFO pins and not the PA_BOOST pins
   // then you can configure the power transmitter power for -1 to 14 dBm and with useRFO true. 
   // Failure to do that will result in extremely low transmit powers.
-  rf95.setTxPower(20, true);
+  //rf95.setTxPower(20, true);
 }
 
 void loop()
